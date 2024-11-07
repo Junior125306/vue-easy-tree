@@ -6,67 +6,65 @@
 
 # vue-easy-tree
 
-**English** | [中文](./README.zh-CN.md)
+## 介绍
 
-## Introduction
-A tree component based on vue2.x that supports a small amount of data or a large amount of data, multiple functions, and virtual scrolling.
+一款基于vue2.x，同时支持少量数据或大量数据、多种功能和虚拟滚动的树组件。
 
-Based on the tree style and function extracted from [element-ui](https://element.eleme.cn/#/en-US/component/tree)(License:MIT), combined with [vue-virtual-scroller](https://github.com/Akryum/vue-virtual-scroller)(License:MIT) tree component.
+基于[element-ui](https://element.eleme.cn/#/zh-CN/component/tree)(License:MIT)中抽取的tree样式和功能，结合[vue-virtual-scroller](https://github.com/Akryum/vue-virtual-scroller)(License:MIT)所做的树组件。
 
-## v1.0 Feature List [![npm](https://img.shields.io/npm/v/@wchbrad/vue-easy-tree.svg)](https://www.npmjs.com/package/@wchbrad/vue-easy-tree)
+## v1.0 功能列表 [![npm](https://img.shields.io/npm/v/@wchbrad/vue-easy-tree.svg)](https://www.npmjs.com/package/@wchbrad/vue-easy-tree)
 
--  Large data volume supports virtual scrolling
--  Display of basic tree data
--  Support checkbox selection
--  Support lazy loading
--  Expanded by default and selected by default
--  Disable node
--  Select nodes and obtain selected node information in a variety of ways
--  Support custom node content
--  Support node filtering
--  Support accordion mode under non-virtual scrolling
--  Support node drag and drop when non-lazy loading
+-   大数据量支持虚拟滚动
+-   基本树形数据的展示
+-   支持checkbox选择
+-   支持懒加载
+-   默认展开和默认选中
+-   禁用节点
+-   通过多种方式选中节点和获取选中的节点信息
+-   支持自定义节点内容
+-   支持节点过滤
+-   非虚拟滚动下，支持手风琴模式
+-   非懒加载时，支持节点拖拽
 
-## Features
+## 特点
 
--  Support virtual scrolling
--  Not only supports tree-shaped data display with large amounts of data, but also supports data manipulation and modification
+-   支持虚拟滚动
+-   不仅支持大数据量的树形数据展示，还支持数据的操作和更改
 
-
-## Install
+## 安装
 
 ```
 npm install @wchbrad/vue-easy-tree
 ```
 
-or
+或
 
 ```
 yarn add @wchbrad/vue-easy-tree
 ```
 
-## Mount
+## 引入
 
-### mount with global
+### 全局引入
 
-Import in the `main.js` file:
+在 `main.js` 文件中引入：
 
 ```JS
 import Vue from "vue";
 import VueEasyTree from "@wchbrad/vue-easy-tree";
-// Style file, you can customize the style or theme according to your needs
+// 样式文件，可以根据需要自定义样式或主题
 import "@wchbrad/vue-easy-tree/src/assets/index.scss"
 
 Vue.use(VueEasyTree)
 ```
 
-### mount with component
+### 组件引入
 
-Import in the component：
+在组件中引入：
 
 ```JS
 import VueEasyTree from "@wchbrad/vue-easy-tree";
-// Style file, you can customize the style or theme according to your needs
+// 样式文件，可以根据需要自定义样式或主题
 import "@wchbrad/vue-easy-tree/src/assets/index.scss"
 
 export default {
@@ -76,14 +74,14 @@ export default {
 }
 ```
 
-## Usage:
+## 使用:
 
-:warning: When using virtual scrolling, `node-key` must be set
+:warning: 在使用虚拟滚动时，必须设置 `node-key`。
 
 ```html
 <template>
   <div class="ve-tree" style="height:calc(100vh - 20px)">
-  <!-- Just remove the height parameter when not using virtual scrolling -->
+  <!-- 不使用虚拟滚动时只需去掉height参数即可 -->
     <vue-easy-tree
       ref="veTree"
       node-key="id"
@@ -137,21 +135,21 @@ export default {
 
 ```
 
-## Change SCSS variables in the project
-By creating a new style file, such as: `ve-tree-var.scss`, write the following content：
+## 在项目中改变 SCSS 变量
+通过新建一个样式文件，如：`ve-tree-var.scss`，写入以下内容：
 
 ```JS
-/* Change theme color variable */
+/* 改变主题色变量 */
 $--color-primary: #ea5404;
 
-/* Change the icon font path variable, required */
+/* 改变 icon 字体路径变量，必需 */
 $--font-path: "~@wchbrad/vue-easy-tree/src/assets/fonts";
 
 @import "@wchbrad/vue-easy-tree/src/assets/index.scss";
 ```
-:warning: It should be noted that it is necessary to override the font path variable, and assign it to the relative path where the icon icon in @wchbrad/vue-easy-tree is located.
+:warning: 需要注意的是，覆盖字体路径变量是必需的，将其赋值为 @wchbrad/vue-easy-tree 中 icon 图标所在的相对路径即可。
 
-Then directly import the above style files in `main.js`：
+然后在 `main.js` 中直接引入以上样式文件即可：
 ```JS
 import Vue from 'vue'
 import VueEasyTree from "@wchbrad/vue-easy-tree";
@@ -160,15 +158,16 @@ import "./css/ve-tree-var.scss"
 Vue.use(VueEasyTree)
 ```
 
-## Other properties and methods
 
-**From [element-ui official document](https://element.eleme.cn/#/en-US/component/tree)**<br />
-**When you need to use virtual scrolling, just add the `height` property, such as:**
+## 其它属性和方法
+
+**来自[element-ui 官方文档](https://element.eleme.cn/#/zh-CN/component/tree)**<br />
+**需要使用虚拟滚动时，增加 `height` 属性即可，如：**
 ```html
 <vue-easy-tree :data="data" height="calc(100vh - 20px)" :props="defaultProps" @node-click="handleNodeClick"></vue-easy-tree>
 ```
 
-**[Quick view of examples and api](./element-ui-tree.md)**
+**[快速查看示例和api](./element-ui-tree.zh-CN.md)**
 
 
 ## License

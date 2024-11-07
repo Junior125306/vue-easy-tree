@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "AAEA,iDAC8B",
+    "sources": [
+        "function.scss",
+        "config.scss"
+    ],
+    "names": [],
+    "file": "function.min.css"
+}
